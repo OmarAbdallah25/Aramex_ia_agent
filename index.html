@@ -166,6 +166,28 @@
   @media (min-width:901px){ .phone-video-wrap{ aspect-ratio:9/14; } }
   .phone-video{ width:100%; height:100%; object-fit:contain; display:block; border:none; }
 
+  .drive-watch-btn{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    margin:14px auto 0; width:min(340px,90%);
+    padding:14px 20px; border-radius:100px;
+    background:linear-gradient(90deg,var(--red),#ff4d6d);
+    color:#fff; font-family:var(--disp); font-weight:700; font-size:14.5px;
+    text-decoration:none; letter-spacing:0.01em;
+    box-shadow:0 10px 30px rgba(228,3,46,0.35), 0 0 0 1px rgba(255,255,255,0.08) inset;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    animation:driveBtnPulse 2.2s ease-in-out infinite;
+  }
+  .drive-watch-btn:hover{
+    transform:translateY(-2px) scale(1.02);
+    box-shadow:0 14px 36px rgba(228,3,46,0.5), 0 0 0 1px rgba(255,255,255,0.12) inset;
+  }
+  .drive-watch-btn svg{ width:18px; height:18px; flex-shrink:0; }
+  @keyframes driveBtnPulse{
+    0%,100%{ box-shadow:0 10px 30px rgba(228,3,46,0.35), 0 0 0 1px rgba(255,255,255,0.08) inset; }
+    50%{ box-shadow:0 10px 40px rgba(228,3,46,0.6), 0 0 0 1px rgba(255,255,255,0.08) inset; }
+  }
+  @media (prefers-reduced-motion: reduce){ .drive-watch-btn{ animation:none; } }
+
   .bubble{ max-width:78%; padding:10px 13px; border-radius:14px; font-size:13.5px; line-height:1.4; opacity:0; transform:translateY(8px); animation:bubbleIn 0.5s ease forwards; }
   .bubble.user{ align-self:flex-end; background:#1f8a4c; border-bottom-right-radius:3px; }
   .bubble.bot{ align-self:flex-start; background:#1c2430; border-bottom-left-radius:3px; }
@@ -336,6 +358,13 @@
               <div class="status">● Live demo</div>
             </div>
           </div>
+          <a class="drive-watch-btn" href="https://drive.google.com/file/d/1X7fe7HIEbFr_uUsixjam1VqK4Pc0rC75/view?usp=sharing" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="white" fill-opacity="0.15"/>
+              <path d="M9.5 7.5L16.5 12L9.5 16.5V7.5Z" fill="white"/>
+            </svg>
+            Watch full demo on Google Drive
+          </a>
           <div class="phone-video-wrap">
             <!--
               👉 Replace the src below with your video file
